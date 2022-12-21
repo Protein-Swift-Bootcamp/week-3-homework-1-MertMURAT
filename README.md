@@ -11,13 +11,13 @@
 
 # Notification Center
 
-[x] Notification Center sanıldığı gibi bildirim alma işlemi değildir.
+- [x] Notification Center sanıldığı gibi bildirim alma işlemi değildir.
 
-[x] Android platformundaki broadcast mantığı ile çalışır.
+- [x] Android platformundaki broadcast mantığı ile çalışır.
 
-[x] Uygulama içinde bildirim üretilerek istenilen her yerden bu bildirime ulaşılabilir.
+- [x] Uygulama içinde bildirim üretilerek istenilen her yerden bu bildirime ulaşılabilir.
 
-[x] Notification Center gönderen kısım observer ise alan kısımdır.
+- [x] Notification Center gönderen kısım observer ise alan kısımdır.
 
-[x] Notification Center : Radyo istasyonu ise
-[x] Observer: Radyodur.
+- [x] Notification Center : Radyo istasyonu ise
+- [x] Observer: Radyodur.
