@@ -9,23 +9,26 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet weak var enterNameTF: UITextField!
+    
+    @IBOutlet weak var enterAgeTF: UITextField!
+    
+    @IBOutlet weak var submitBtn: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        containerView.layer.cornerRadius = 10
+        submitBtn.layer.cornerRadius = 10
 
-        NotificationCenter.default.addObserver(self, selector: #selector(showResult(data:)), name:  NSNotification.Name(rawValue: "showResultID"), object: nil)
- 
+        
        }
 
-    @objc func showResult(data:Notification){
+    @IBAction func submitBtnTap(_ sender: Any) {
         
-        if let userInfo = data.userInfo{
-            
-            let result = userInfo["result"] as! Int
-            self.dataLabel.text = "Result: " + String(result)
-        }
+        navigationController?.popViewController(animated: true)
     }
     
    
