@@ -7,6 +7,9 @@
 => ikinci VC den ilk VC’a veriler 3 Farklı yol ile aktarılabilir.
 
 => protocol, notification center, closure
+![FirstVC](https://user-images.githubusercontent.com/58560920/209447486-539a7a91-67d4-43ef-8195-8e0a34fea573.png)
+
+![SecondVC](https://user-images.githubusercontent.com/58560920/209447487-c25f6a2c-34cc-4145-9783-a097cd322d92.png)
 
 
 # Notification Center
