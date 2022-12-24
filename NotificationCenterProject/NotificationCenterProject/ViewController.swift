@@ -7,32 +7,47 @@
 
 import UIKit
 
+let notificationKey = "com.mert"
+
 class ViewController: UIViewController {
 
     
-    @IBOutlet weak var notificationTxtLbl: UILabel!
+    @IBOutlet weak var nameTxtLbl: UILabel!
+
+ 
     
-    @IBOutlet weak var infoLbl: UILabel!
+    @IBOutlet weak var ageTxtLbl: UILabel!
     
     @IBOutlet weak var goToSecondVCBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goToSecondVCBtn.layer.cornerRadius = 10
-        notificationTxtLbl.text = "Didn' t notify yet :("
-        infoLbl.text = "Name and Age not set. Go to SecondViewController to set them."
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("text"), object: nil)
         
-
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification2(_:)), name: Notification.Name("text2"), object: nil)
+        
+        goToSecondVCBtn.layer.cornerRadius = 10
+      
+    }
+    
+    @objc func didGetNotification(_ notification: Notification){
+        let textName = notification.object as! String?
+        nameTxtLbl.text = textName
         
     }
     
+    @objc func didGetNotification2(_ notification: Notification){
+        let textAge = notification.object as! String?
+        ageTxtLbl.text = textAge
+    }
+    
+    
     @IBAction func goToSecondVCTap(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
-        
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "other") as! SecondViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true)
     }
     
     

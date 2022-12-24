@@ -18,17 +18,24 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var submitBtn: UIButton!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         containerView.layer.cornerRadius = 10
         submitBtn.layer.cornerRadius = 10
-
+ 
         
        }
 
     @IBAction func submitBtnTap(_ sender: Any) {
+   
+        NotificationCenter.default.post(name: Notification.Name("text"), object: enterNameTF.text)
         
-        navigationController?.popViewController(animated: true)
+        NotificationCenter.default.post(name: Notification.Name("text2"), object: enterAgeTF.text)
+        
+        dismiss(animated: true,completion: nil)
+        
+        
     }
     
    
